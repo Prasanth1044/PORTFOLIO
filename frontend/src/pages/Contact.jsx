@@ -100,8 +100,8 @@ const Contact = () => {
                         }}>
                             <p style={{ marginBottom: '1rem' }}>Or reach out directly:</p>
                             <p>
-                                <a href="mailto:your.email@example.com" style={{ fontSize: '1.1rem' }}>
-                                    your.email@example.com
+                                <a href="mailto:pras261105@gmail.com" style={{ fontSize: '1.1rem' }}>
+                                    pras261105@gmail.com
                                 </a>
                             </p>
                         </div>
