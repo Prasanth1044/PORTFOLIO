@@ -66,6 +66,35 @@ const About = () => {
                     </div>
                 </section>
 
+                {/* Technical Skills */}
+                <section className="section">
+                    <div className="container">
+                        <h2 className="section-title">Technical Skills</h2>
+                        <div className="skills-grid">
+                            <div className="card skill-item">
+                                <h4>Programming Languages</h4>
+                                <p>C/C++, Python, Java, Haskell, JavaScript, TypeScript</p>
+                            </div>
+                            <div className="card skill-item">
+                                <h4>Frameworks & Libraries</h4>
+                                <p>ReactJS, Express, Tailwind CSS, PyTorch, FastAPI</p>
+                            </div>
+                            <div className="card skill-item">
+                                <h4>Embedded Systems</h4>
+                                <p>STM32 Microcontrollers, RFID, SPI, I2C, DMA, GPIO, Embedded C</p>
+                            </div>
+                            <div className="card skill-item">
+                                <h4>Databases</h4>
+                                <p>MySQL, MongoDB, Redis, Prisma, PostgreSQL</p>
+                            </div>
+                            <div className="card skill-item">
+                                <h4>Interests & Specializations</h4>
+                                <p>Machine Learning, NLP, Generative AI, Blockchain, Algorithms</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Projects */}
                 <section className="section">
                     <div className="container">
@@ -108,37 +137,6 @@ const About = () => {
                                 <li>Modeled the system using SimPy discrete-event simulation library to analyze deployment trade-offs, focusing on minimizing latency and maximizing Quality of Experience (QoE).</li>
                             </ul>
                         </div>
-                    </div>
-                </section>
-
-                {/* Technical Skills */}
-                <section className="section">
-                    <div className="container">
-                        <h2 className="section-title">Technical Skills</h2>
-                        <div className="skills-grid">
-                            <div className="card skill-item">
-                                <h4>Programming Languages</h4>
-                                <p>C/C++, Python, Java, Haskell, JavaScript, TypeScript</p>
-                            </div>
-                            <div className="card skill-item">
-                                <h4>Frameworks & Libraries</h4>
-                                <p>ReactJS, Express, Tailwind CSS, PyTorch, FastAPI</p>
-                            </div>
-                            <div className="card skill-item">
-                                <h4>Embedded Systems</h4>
-                                <p>STM32 Microcontrollers, RFID, SPI, I2C, DMA, GPIO, Embedded C</p>
-                            </div>
-                            <div className="card skill-item">
-                                <h4>Databases</h4>
-                                <p>MySQL, MongoDB, Redis, Prisma, PostgreSQL</p>
-                            </div>
-                            <div className="card skill-item">
-                                <h4>Interests & Specializations</h4>
-                                <p>Machine Learning, NLP, Generative AI, Blockchain, Algorithms</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </main>
             <Footer />
         </div>
