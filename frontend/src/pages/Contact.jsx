@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 // Initialize EmailJS with your Public Key
-emailjs.init('YOUR_PUBLIC_KEY_HERE');
+emailjs.init('D_i27hMLA0iiIl6wT');
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -39,8 +39,8 @@ const Contact = () => {
         };
 
         emailjs.send(
-            'YOUR_SERVICE_ID_HERE',      // Replace with your Service ID
-            'YOUR_TEMPLATE_ID_HERE',     // Replace with your Template ID
+            'service_2xkmnk8',      // Your Service ID
+            'template_9yxke1l',     // Your Template ID
             templateParams
         )
         .then((response) => {
