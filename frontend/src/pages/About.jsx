@@ -30,7 +30,7 @@ const About = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link to="/projects" className="btn btn-primary">View Projects</Link>
-                            <a href="#" className="btn btn-secondary" onClick={(e) => { e.preventDefault(); alert('Resume download feature coming soon!'); }}>Download Resume</a>
+                            <a href="/resume.pdf" download className="btn btn-secondary">Download Resume</a>
                         </div>
                     </div>
                 </section>
