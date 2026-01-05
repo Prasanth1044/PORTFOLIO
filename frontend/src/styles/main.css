@@ -379,14 +379,14 @@ nav .active::after {
 
 .project-card h3 {
   margin-bottom: var(--spacing-md);
-  color: var(--gray-900);
+  color: var(--text-light);
   font-size: 1.25rem;
 }
 
 .project-card p {
   flex: 1;
   margin-bottom: var(--spacing-md);
-  color: var(--gray-600);
+  color: var(--text-muted);
 }
 
 .project-tags {
