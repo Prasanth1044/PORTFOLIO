@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -22,11 +23,15 @@ const About = () => {
                 <section className="section">
                     <div className="container">
                         <h2 className="section-title">Professional Summary</h2>
-                        <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
+                        <p style={{ lineHeight: '1.8', marginBottom: '2rem' }}>
                             Developer focused on <strong>Generative AI, Deep Learning</strong>, and full-stack application development. 
                             Skilled in building AI-powered systems, working with LLMs, embeddings, and model workflows. Interested in 
                             integrating machine learning into scalable backend applications and real-world products.
                         </p>
+                        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                            <Link to="/projects" className="btn btn-primary">View Projects</Link>
+                            <a href="#" className="btn btn-secondary" onClick={(e) => { e.preventDefault(); alert('Resume download feature coming soon!'); }}>Download Resume</a>
+                        </div>
                     </div>
                 </section>
 
