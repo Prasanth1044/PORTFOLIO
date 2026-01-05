@@ -137,6 +137,8 @@ const About = () => {
                                 <li>Modeled the system using SimPy discrete-event simulation library to analyze deployment trade-offs, focusing on minimizing latency and maximizing Quality of Experience (QoE).</li>
                             </ul>
                         </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
