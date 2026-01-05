@@ -1,33 +1,29 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
-    const scrollToSection = (sectionId) => {
-        const element = document.querySelector(sectionId);
-        element?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return (
         <nav>
             <ul>
                 <li>
-                    <button onClick={() => scrollToSection('.hero')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', fontSize: 'inherit' }}>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
                         Home
-                    </button>
+                    </NavLink>
                 </li>
                 <li>
-                    <button onClick={() => scrollToSection('.about-content')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', fontSize: 'inherit' }}>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>
                         About
-                    </button>
+                    </NavLink>
                 </li>
                 <li>
-                    <button onClick={() => scrollToSection('.projects-grid')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', fontSize: 'inherit' }}>
+                    <NavLink to="/projects" className={({ isActive }) => isActive ? 'active' : ''}>
                         Projects
-                    </button>
+                    </NavLink>
                 </li>
                 <li>
-                    <button onClick={() => scrollToSection('.contact-wrapper')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', fontSize: 'inherit' }}>
+                    <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>
                         Contact
-                    </button>
+                    </NavLink>
                 </li>
             </ul>
         </nav>
