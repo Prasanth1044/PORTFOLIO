@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+// Initialize EmailJS with your Public Key
+emailjs.init('YOUR_PUBLIC_KEY_HERE');
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +14,8 @@ const Contact = () => {
     });
 
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,11 +27,34 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically send the form data to a backend or email service
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
+        setLoading(true);
+        setError('');
+
+        // EmailJS will send to your Gmail
+        const templateParams = {
+            to_email: 'pras261105@gmail.com',
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+        };
+
+        emailjs.send(
+            'YOUR_SERVICE_ID_HERE',      // Replace with your Service ID
+            'YOUR_TEMPLATE_ID_HERE',     // Replace with your Template ID
+            templateParams
+        )
+        .then((response) => {
+            console.log('Email sent successfully!', response);
+            setSubmitted(true);
+            setFormData({ name: '', email: '', message: '' });
+            setLoading(false);
+            setTimeout(() => setSubmitted(false), 5000);
+        })
+        .catch((err) => {
+            console.error('Email failed to send:', err);
+            setError('Failed to send email. Please try again.');
+            setLoading(false);
+        });
     };
 
     return (
@@ -51,6 +80,20 @@ const Contact = () => {
                                 animation: 'fadeInUp 0.6s ease-out'
                             }}>
                                 ✓ Thank you! Your message has been sent. I'll get back to you soon!
+                            </div>
+                        )}
+
+                        {error && (
+                            <div style={{
+                                background: '#f87171',
+                                color: 'white',
+                                padding: '1rem',
+                                borderRadius: '8px',
+                                marginBottom: '2rem',
+                                textAlign: 'center',
+                                animation: 'fadeInUp 0.6s ease-out'
+                            }}>
+                                ⚠️ {error}
                             </div>
                         )}
 
@@ -87,8 +130,8 @@ const Contact = () => {
                                     required
                                 ></textarea>
                             </div>
-                            <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-                                Send Message
+                            <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={loading}>
+                                {loading ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
 
